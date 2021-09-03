@@ -14,23 +14,24 @@
 <body>
     <!-- HEADER  -->
     <!-- LOGO  -->
-    <div id="logo">
-        <img src="images/logo/ohmyfood.png" alt="logo du restaurant Ohmyfood">
-    </div>
+<header>
+    <h1 id="logo">ohmyfood</h1>
+</header>
 
+<main>
     <!-- RECHERCHE  -->
     <form id="search">
-        <i class="fas fa-map-marker-alt fa-sm icon"></i>
-        <input type="search" placeholder="Paris, BElleville"> 
+        <i class="fas fa-map-marker-alt fa-sm"></i>
+        <input type="search" placeholder="Paris, Belleville">
     </form>
 
     <!-- EXPLORER NOS RESATUARANTS  -->
-    <section class="bg-grey">
-        <h2></h2>
-        <p></p>
-        <div class="btn-pink">
-            <button type="button">Explorer nos restaurants</button>
-        </div>
+    <section class="intro">
+        <h2>Réservez le menu qui vous convient</h2>
+        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+        <a href="#list-restaurant">
+            <button type="button" class="btn-cta">Explorer nos restaurants</button>
+        </a>
     </section>
 
     <!-- FONTIONNEMENT  -->
@@ -51,8 +52,51 @@
             <div class="icon"><i class="fas fa-store fa-sm"></i></div>
             <p>Dégustez au restaurant</p>
         </div>
-
     </section>
-    
+
+    <!-- RESTAURANTS  -->
+    <section id="list-restaurant">
+        <h2>Restaurants</h2>
+        <a href="lapalette.html" class="restauContainer">
+            <div class="restauImg"><img src="" alt=""></div>
+            <div class="restauCaption">
+                <p><b>La palette du goût</b><br>Ménilmontant</p>
+                <div class="heartContainer"><i class="far fa-heart"></i></div>
+            </div>
+        </a>
+        <a href="" class="restauContainer">
+            <div class="restauImg"><img src="" alt=""></div>
+            <div class="restauCaption">
+                <p><b>La note enchantée</b><br>Charonne</p>
+                <div class="heartContainer"><i class="far fa-heart"></i></div>
+            </div>
+        </a>
+        <a href="" class="restauContainer">
+            <div class="restauImg"><img src="" alt=""></div>
+            <div class="restauCaption">
+                <p><b>&Agrave; la française</b><br>Cité Rouge</p>
+                <div class="heartContainer"><i class="far fa-heart"></i></div>
+            </div>
+        </a>
+        <a href="" class="restauContainer">
+            <div class="restauImg"><img src="" alt=""></div>
+            <div class="restauCaption">
+                <p><b>Le délice des sens</b><br>Folie Méricourt</p>
+                <div class="heartContainer"><i class="far fa-heart"></i></div>
+            </div>
+        </a>
+    </section>
+</main>
+
+    <!-- FOOTER  -->
+    <footer>
+        <div><img src="" alt=""></div>
+        <div class="iconFooterContainer"><i class="fas fa-utensils"></i></div>
+        <div class="iconFooterContainer"><i class="fas fa-hands-helping"></i></div>
+        <p><a href="">Mentions légales</a></p>
+        <p><a href="">Contact</a></p>
+    </footer>
+
+
 </body>
 </html>

@@ -1,7 +1,8 @@
 // PARAMETRES PAR DEFAUT 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
-
+@import "../utils/mixins";
+@import "../utils/variables";
 
 //  TABLETTE 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
@@ -10,6 +11,7 @@
 
 // MOBILE 
 @media only screen and (max-width: 767px){
+
 
         
 

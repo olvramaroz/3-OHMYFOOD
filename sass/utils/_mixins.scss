@@ -41,7 +41,7 @@
 @mixin radius-shadow{
     border: none;
     border-radius: map-get($global-size, cta);
-    box-shadow: .2rem .5rem 1rem lightgrey;
+    box-shadow: 0rem .2rem .5rem lightgrey;
 }
 
 @mixin cta-bg{

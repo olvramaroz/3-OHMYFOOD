@@ -8,6 +8,10 @@
     // scroll-behavior: smooth;
 }
 
+a, li{
+    text-decoration: none;
+}
+
 header{
     padding: nth($padding, 1);
     box-shadow: 0 0 .5rem rgba(0,0,0,.25);
@@ -49,4 +53,47 @@ header{
         @include cta-bg;
         transition-duration: .20s;
     }
+}
+
+
+.fonction{
+    padding: nth($padding, 3) nth($padding, 2);
+
+        h2{
+            margin-bottom: nth($margin, 2);
+        }
+        .fonction-list{
+            padding: 0;
+            list-style: none;
+            counter-reset: myCounter;
+                @media screen and (min-width: 64rem){
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+        }
+        .fonction-item{
+            margin: 1rem 0 1rem .75rem;
+            @include radius-shadow;
+            background-color: $color-bg;
+            padding: nth($padding, 4);
+            &::before{
+                counter-increment: myCounter 1;
+                content: counter(myCounter) " ";
+                @include flexCenterXY;
+                background-color: $color-primary;
+                width: 1.5rem;
+                height: 1.5rem;
+                color: #fff;
+                border-radius: 50%;
+                position: absolute;
+                left: .9rem;
+            }
+            &:hover{
+                background-color: lighten($color-primary, 35%);
+            }
+        }
+            .fonction-txt{
+                font-weight: bold;
+                padding-left: nth($padding, 3);
+            }
 }

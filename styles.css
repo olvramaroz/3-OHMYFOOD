@@ -63,6 +63,11 @@ header #logo {
 .fonction h2 {
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 64rem) {
+  .fonction h2 {
+    text-align: center;
+  }
+}
 .fonction .fonction-list {
   padding: 0;
   list-style: none;
@@ -71,7 +76,7 @@ header #logo {
 @media screen and (min-width: 64rem) {
   .fonction .fonction-list {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 }
 .fonction .fonction-item {
@@ -81,6 +86,7 @@ header #logo {
   box-shadow: 0rem 0.2rem 0.5rem lightgrey;
   background-color: #F6F6F6;
   padding: 1.5rem;
+  position: relative;
 }
 .fonction .fonction-item::before {
   counter-increment: myCounter 1;
@@ -94,10 +100,15 @@ header #logo {
   color: #fff;
   border-radius: 50%;
   position: absolute;
-  left: 0.9rem;
+  left: -0.8rem;
 }
 .fonction .fonction-item:hover {
   background-color: #f2eafb;
+}
+@media screen and (min-width: 64rem) {
+  .fonction .fonction-item {
+    margin: 1rem;
+  }
 }
 .fonction .fonction-txt {
   font-weight: bold;

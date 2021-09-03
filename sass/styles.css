@@ -79,6 +79,12 @@ header #logo {
   margin-bottom: 1.5rem;
 }
 
+@media screen and (min-width: 64rem) {
+  .fonction h2 {
+    text-align: center;
+  }
+}
+
 .fonction .fonction-list {
   padding: 0;
   list-style: none;
@@ -90,9 +96,9 @@ header #logo {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -104,6 +110,7 @@ header #logo {
           box-shadow: 0rem .2rem .5rem lightgrey;
   background-color: #F6F6F6;
   padding: 1.5rem;
+  position: relative;
 }
 
 .fonction .fonction-item::before {
@@ -124,11 +131,17 @@ header #logo {
   color: #fff;
   border-radius: 50%;
   position: absolute;
-  left: .9rem;
+  left: -.8rem;
 }
 
 .fonction .fonction-item:hover {
   background-color: #f2eafb;
+}
+
+@media screen and (min-width: 64rem) {
+  .fonction .fonction-item {
+    margin: 1rem;
+  }
 }
 
 .fonction .fonction-txt {

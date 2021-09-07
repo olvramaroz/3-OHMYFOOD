@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Accueil Ohmyfood</title>
+    <script
+      src="https://kit.fontawesome.com/0b1f72f67c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- HEADER  -->
+    <!-- LOGO  -->
+    <object data="header.html" type="text/html"></object>
+
+    <main>
+      <!-- RECHERCHE  -->
+      <form id="search">
+        <i class="fas fa-map-marker-alt fa-sm"></i>
+        <input type="search" placeholder="Paris, Belleville" />
+      </form>
+
+      <!-- EXPLORER NOS RESATUARANTS  -->
+      <section class="intro">
+        <h2>Réservez le menu qui vous convient</h2>
+        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+        <a href="#list-restaurant">
+          <button type="button" class="btn-cta">
+            Explorer nos restaurants
+          </button>
+        </a>
+      </section>
+
+      <!-- FONCTIONNEMENT  -->
+      <section class="fonction">
+        <div class="container">
+          <h2>Fonctionnement</h2>
+          <ol class="fonction-list">
+            <li class="fonction-item">
+              <i class="fas fa-mobile-alt fa-lg icon-fonction"></i>
+              <span class="fonction-txt">Choisissez un restaurant</span>
+            </li>
+            <li class="fonction-item">
+              <i class="fas fa-list-ul fa-lg icon-fonction"></i>
+              <span class="fonction-txt">Composez votre menu</span>
+            </li>
+            <li class="fonction-item">
+              <i class="fas fa-store fa-lg icon-fonction"></i>
+              <span class="fonction-txt">Dégustez au restaurant</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- RESTAURANTS  -->
+      <section id="list-restaurant">
+        <h2>Restaurants</h2>
+        <a href="lapalette.html" class="restauContainer">
+          <figure>
+            <div class="restauImg">
+              <img
+                src="images/restaurants/lapalettedugout.jpg"
+                alt="la palette du goût"
+              />
+            </div>
+            <figcaption class="restauCaption">
+              <p><b>La palette du goût</b><br />Ménilmontant</p>
+              <div class="heartContainer"><i class="far fa-heart fa-2x"></i></div>
+            </figcaption>
+            <span class="new">Nouveau</span>
+          </figure>
+        </a>
+        <a href="noteenchantee.html" class="restauContainer">
+          <figure>
+            <div class="restauImg">
+              <img
+                src="images/restaurants/lanoteenchantee.jpg"
+                alt="la note enchantée"
+              />
+            </div>
+            <figcaption class="restauCaption">
+              <p><b>La note enchantée</b><br />Charonne</p>
+              <div class="heartContainer"><i class="far fa-heart fa-2x"></i></div>
+            </figcaption>
+            <span class="new">Nouveau</span>
+          </figure>
+        </a>
+        <a href="francaise.html" class="restauContainer">
+          <figure>
+            <div class="restauImg">
+              <img
+                src="images/restaurants/alafrancaise.jpg"
+                alt="à la française"
+              />
+            </div>
+            <figcaption class="restauCaption">
+              <p><b>&Agrave; la française</b><br />Cité Rouge</p>
+              <div class="heartContainer"><i class="far fa-heart fa-2x"></i></div>
+            </figcaption>
+          </figure>
+        </a>
+        <a href="delicesens.html" class="restauContainer">
+          <figure>
+            <div class="restauImg">
+              <img
+                src="images/restaurants/delicedessens.jpg"
+                alt="le délice des sens"
+              />
+            </div>
+            <figcaption class="restauCaption">
+              <p><b>Le délice des sens</b><br />Folie Méricourt</p>
+              <div class="heartContainer"><i class="far fa-heart fa-2x"></i></div>
+            </figcaption>
+          </figure>
+        </a>
+      </section>
+    </main>
+
+    <!-- FOOTER  -->
+    <object data="footer.html" type="text/html"></object>
+  </body>
+</html>

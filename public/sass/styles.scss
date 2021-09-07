@@ -1,0 +1,182 @@
+@import "responsive/media";
+@import "utils/mixins";
+@import "utils/variables";
+
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    // scroll-behavior: smooth;
+}
+
+a, li{
+    text-decoration: none;
+}
+
+object{
+    width: 100%;
+}
+
+header{
+    padding: nth($padding, 1);
+    box-shadow: 0 0 .5rem rgba(0,0,0,.25);
+    position: relative;
+        #logo{
+            @include font-title;
+            text-align: center;
+        }
+}
+
+#search{
+    @include flexCenterXY;
+    padding: nth($padding, 1);
+    background-color: darken($color-bg, 4);
+    input{
+        border-style: none;
+        padding: nth($padding, 1);
+        background-color: darken($color-bg, 4);
+        font-size: 1.2rem;
+        width: 10rem;
+    }       
+}
+
+.intro{
+    padding: nth($padding, 3);
+    @include txt-center;
+    background-color: $color-bg;
+    h2{
+        padding: 0 nth($padding, 3);
+    }
+    p{
+        margin: 1.5rem 0;
+        font-weight: 400;
+    }
+    .btn-cta{
+        padding: nth($padding, 2) nth($padding, 3);
+        color: #fff;
+        @include radius-shadow;
+        @include cta-bg;
+        transition-duration: .20s;
+    }
+}
+
+
+.fonction{
+    padding: nth($padding, 3) nth($padding, 2);
+
+        h2{
+            margin-bottom: nth($margin, 2);
+            @media screen and (min-width: 48rem){
+                text-align: center;
+            }
+        }
+        .fonction-list{
+            padding: 0;
+            list-style: none;
+            counter-reset: myCounter;
+            @media screen and (min-width: 48rem){
+                    display: flex;
+                    justify-content: center;
+                }
+        }
+    }
+.fonction-item{
+            margin: 1rem 0 1rem .75rem;
+            @include radius-shadow;
+            background-color: $color-bg;
+            padding: nth($padding, 4);
+            position: relative;
+            @include flexCenterY;
+            &::before{
+                counter-increment: myCounter 1;
+                content: counter(myCounter) " ";
+                @include flexCenterXY;
+                background-color: $color-primary;
+                width: 1.5rem;
+                height: 1.5rem;
+                color: #fff;
+                border-radius: 50%;
+                position: absolute;
+                left: -.8rem;
+            }
+            &:hover{
+                background-color: lighten($color-primary, 35%);
+            }
+            @media screen and (min-width: 48rem){
+                margin: 1rem;
+            }
+        }
+
+.icon-fonction{
+    padding-left: .5rem;
+}
+.fonction-txt{
+    font-weight: bold;
+    padding-left: nth($padding, 3);
+    }
+.icon-fonction:hover{
+    color: $color-primary;
+}
+
+.new{
+    @include new;
+}
+
+#list-restaurant{
+    padding: 4rem nth($padding, 2);
+    background-color: $color-bg;
+}
+
+.restauContainer{
+    @include flexColumn;
+    margin: nth($margin, 2) 0;
+    @include img-fit-radius;
+    position: relative;
+        .restauImg{
+            @include img-fit-container;
+        }
+            img{
+                @include img-fit;
+            }
+}
+
+.restauCaption{
+    padding: nth($padding, 1) nth($padding, 2);
+    @include spaceBet;
+    color: $color-default;
+    line-height: 1.5;
+        p{
+            font-size: 1.2rem;
+        }
+        .heartContainer{
+            @include flexCenterY;
+        }
+}
+
+footer{
+    background-color: #353535;
+    color: $color-light;
+    @include flexColumn;
+    padding: nth($padding, 2) ;
+    line-height: 1.2rem;
+        #logo{
+            font-family: 'Shrikhand', sans-serif;
+            padding-bottom: 1rem;
+        }
+        a{
+            color: $color-light;
+        }
+}
+.iconFootContainer{
+    @include flexRow;
+    align-items: center;
+    .icon5{
+        margin-right: .5rem;
+    }
+    .icon7{
+        margin-right: .7rem;
+    }
+    
+}
+.txtFooter{
+    font-size: .8rem;
+}

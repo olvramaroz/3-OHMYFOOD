@@ -32,13 +32,14 @@
 
 @mixin font-title{
     font-family: 'Shrikhand', sans-serif;
+    font-weight: normal;
 }
 
 @mixin txt-center{
     text-align: center;
 }
 
-@mixin radius-shadow{
+@mixin radius-shadow{ // Cadre des boutons CTA
     border: none;
     border-radius: map-get($global-size, cta);
     box-shadow: 0rem .2rem .5rem lightgrey;
@@ -78,3 +79,32 @@
     font-weight: bold;
 }
 
+@mixin itemCard{
+    border-radius: 1rem;
+	box-shadow: 0rem 0.2rem 0.5rem lightgrey;
+	background-color: #fff;
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	padding: .7rem;
+	margin: 1rem;
+}
+
+@mixin itemName{
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 1.5;
+}
+
+@mixin bold{
+    font-weight: bold;
+}
+
+@mixin menuTitle{
+    padding-left: nth($padding, 2);
+}
+
+@mixin animationCard{
+    //@keyframe name duration timing-function fill-mode
+    animation: fadein-bottom 1s cubic-bezier(0.40, 0.575, 0.565, 1) both;
+}

@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script
+    src="https://kit.fontawesome.com/0b1f72f67c.js"
+    crossorigin="anonymous"
+  ></script>
     <title>La palette du goût - Ohmyfood</title>
-</head>
-<body>
-    <header>
-        <div class="restauBanner">
-            <img src="" alt="">
-        </div>
+  </head>
+  <body>
+    <header class="restauHeader">
+      <a href="./index.html"><i class="fas fa-arrow-left fa-lg" aria-hidden="true"></i></a>
+      <a href="./index.html"><h1 id="logo">ohmyfood</h1></a>
     </header>
+
+    <section class="banner">
+        <img src="public/images/restaurants/lapalettedugout.jpg" alt="La Palette du goût sur Ohmyfood">
+    </section>
 
     <!-- LE MENU  -->
     <section class="menuContainer">
-        <div>
-            <h2>La palette du goût</h2>
-            <div class="heartContainer"><i class="far fa-heart"></i></div>
-        </div>
+      <div class="RestauName">
+        <h2>La palette du goût</h2>
+        <span><i class="far fa-heart fa-lg"></i></span>
+      </div>
 
+      <section class="menus">
         <!-- ENTREES  -->
-        <h3>ENTR&Eacute;ES</h3>
-        <div class="flex-column">
-            <div class="bg bg-white box-shadow-radius">
-                <p class="bold800">Fricassée d'escargot</p>
-                <div class="space-between"><p>Au piment d'espelette</p><p><b>25€</b></p></div>
+        <h3 class="menu-title">ENTR&Eacute;ES</h3>
+        <div class="menu">
+            <div class="item-card card0">
+                <p><span class="item-name">Fricassée d'escargot</span><br>Au piment d'espelette</p>
+                <p class="item-price">25€</p>
+                <!-- <span class="item-select">
+                    <i class="fas fa-check-circle fa-lg item-select-icon"></i>
+                </span> -->
             </div>
-            <div class="bg bg-white box-shadow-radius">
-                <p class="bold800">Fricassée d'escargot</p>
-                <div class="space-between"><p>Au piment d'espelette</p><p><b>25€</b></p></div>
+            <div class="item-card card1">
+                <p><span class="item-name">Foie gras de canard mi-cuit</span><br>Et ses copeaux de truffe noire</p>
+                <p class="item-price">35€</p>            
             </div>
-            <div class="bg bg-white box-shadow-radius">
-                <p class="bold800">Fricassée d'escargot</p>
-                <div class="space-between"><p>Au piment d'espelette</p><p><b>25€</b></p></div>
+            <div class="item-card card2">
+                <p><span class="item-name">Oeuf au plat</span><br>Assaisonné à la truffe sur lit de caviar</p>
+                <p class="item-price">20€</p>           
             </div>
-        </div>
-
+      </section>
     </section>
-    
-</body>
+  </body>
 </html>

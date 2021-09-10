@@ -207,10 +207,10 @@ footer{
     margin-top: -4rem;
     border-radius: 3rem 3rem 0 0;
     position: relative;
-    .RestauName{
+    .restauName{
         @include flexCenterY;
         @include spaceBet;
-        padding: nth($padding, 3) nth($padding, 3) nth($padding, 3) nth($padding, 2);
+        padding: nth($padding, 2);
     }
         h2{
             @include font-title;
@@ -231,6 +231,46 @@ footer{
         bottom: -.3rem;
     }
 }
+
+// ANIMATION DU COEUR EN :hover
+.favIcon{
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+    background-color: #000;
+    margin: nth($margin, 1);
+    &:hover::before {
+        opacity: 1;
+      } 
+      &::before {
+        opacity: 0;
+        transition: .5s;
+        content: "";
+        background: linear-gradient(279deg, $color-primary 10%, $color-secondary 90%);      }
+}
+
+.favIcon::before, .like{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.favIcon:hover .like-empty{
+    opacity: 0;
+}
+
+.like{
+    transition-duration: .25s;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mix-blend-mode: lighten;
+}
+
+// ANIMATION APPARITION SMOOTH DES CARTES DANS LE MENU
 
 .item-card{
     @include itemCard;
@@ -259,13 +299,19 @@ footer{
     }
 }
 
-.card0{
+.card1{
     animation-delay: map-get($delay-starter, card1);
 }
-.card1{
+.card2{
     animation-delay: map-get($delay-starter, card2);
 }
-.card2{
+.card3{
     animation-delay: map-get($delay-starter, card3);
 }
+
+
+// ANIMATION APPARITION DE LA SELECTION VERTE EN :HOVER
+
+
+
 

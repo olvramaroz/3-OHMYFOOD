@@ -247,12 +247,12 @@ footer a {
   border-radius: 3rem 3rem 0 0;
   position: relative;
 }
-.menuContainer .RestauName {
+.menuContainer .restauName {
   display: flex;
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 2rem 2rem 1rem;
+  padding: 1rem;
 }
 .menuContainer h2 {
   font-family: "Shrikhand", sans-serif;
@@ -272,6 +272,44 @@ footer a {
   position: absolute;
   left: 1rem;
   bottom: -0.3rem;
+}
+
+.favIcon {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  background-color: #000;
+  margin: 1rem;
+}
+.favIcon:hover::before {
+  opacity: 1;
+}
+.favIcon::before {
+  opacity: 0;
+  transition: 0.5s;
+  content: "";
+  background: linear-gradient(279deg, #9356DC 10%, #FF79DA 90%);
+}
+
+.favIcon::before, .like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.favIcon:hover .like-empty {
+  opacity: 0;
+}
+
+.like {
+  transition-duration: 0.25s;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: lighten;
 }
 
 .item-card {
@@ -309,15 +347,15 @@ footer a {
     opacity: 1;
   }
 }
-.card0 {
+.card1 {
   animation-delay: 0.1s;
 }
 
-.card1 {
+.card2 {
   animation-delay: 0.2s;
 }
 
-.card2 {
+.card3 {
   animation-delay: 0.3s;
 }
 

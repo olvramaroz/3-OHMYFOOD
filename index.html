@@ -24,112 +24,160 @@
       </form>
 
       <!-- EXPLORER NOS RESATUARANTS  -->
-    <div class="accueil">
-      <section class="intro">
-        <h2>Réservez le menu qui vous convient</h2>
-        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-        <a href="#list-restaurant">
-          <button type="button" class="btn-cta">
-            Explorer nos restaurants
-          </button>
-        </a>
-      </section>
+      <div class="accueil">
+        <section class="intro">
+          <h2>Réservez le menu qui vous convient</h2>
+          <p>
+            Découvrez des restaurants d'exception, sélectionnés par nos soins
+          </p>
+          <a href="#list-restaurant">
+            <button type="button" class="btn-cta">
+              Explorer nos restaurants
+            </button>
+          </a>
+        </section>
 
-      <!-- FONCTIONNEMENT  -->
-      <section class="fonction">
-        <div class="container">
-          <h2>Fonctionnement</h2>
-          <ol class="fonction-list">
-            <li class="fonction-item">
-              <i class="fas fa-mobile-alt fa-lg icon-fonction"></i>
-              <span class="fonction-txt">Choisissez un restaurant</span>
-            </li>
-            <li class="fonction-item">
-              <i class="fas fa-list-ul fa-lg icon-fonction"></i>
-              <span class="fonction-txt">Composez votre menu</span>
-            </li>
-            <li class="fonction-item">
-              <i class="fas fa-store fa-lg icon-fonction"></i>
-              <span class="fonction-txt">Dégustez au restaurant</span>
-            </li>
-          </ol>
-        </div>
-      </section>
-    </div>
+        <!-- FONCTIONNEMENT  -->
+        <section class="fonction">
+          <div class="container">
+            <h2>Fonctionnement</h2>
+            <ol class="fonction-list">
+              <li class="fonction-item">
+                <i class="fas fa-mobile-alt fa-lg icon-fonction"></i>
+                <span class="fonction-txt">Choisissez un restaurant</span>
+              </li>
+              <li class="fonction-item">
+                <i class="fas fa-list-ul fa-lg icon-fonction"></i>
+                <span class="fonction-txt">Composez votre menu</span>
+              </li>
+              <li class="fonction-item">
+                <i class="fas fa-store fa-lg icon-fonction"></i>
+                <span class="fonction-txt">Dégustez au restaurant</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
 
       <!-- RESTAURANTS  -->
-      <section id="list-restaurant">
+      <section class="list-restaurant">
         <h2>Restaurants</h2>
-        <a href="lapalette.html" class="restauContainer">
-          <figure>
-            <div class="restauImg">
-              <img
-                src="public/images/restaurants/lapalettedugout.jpg"
-                alt="la palette du goût"
-              />
+        <div class="list-restaurant__Card">
+            <div class="restauContainer">
+              <figure>
+                <div class="restauImg">
+                  <a href="lapalette.html">
+                    <img
+                      src="public/images/restaurants/lapalettedugout.jpg"
+                      alt="la palette du goût"
+                  /></a>
+                </div>
+                <figcaption class="restauCaption">
+                  <p>
+                    <a href="lapalette.html"
+                      ><b>La palette du goût</b><br />Ménilmontant</a
+                    >
+                  </p>
+                  <div class="favIcon">
+                    <i
+                      class="far fa-heart fa-2x fav fav-empty"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-2x fav fav-full"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </figcaption>
+                <span class="new">Nouveau</span>
+              </figure>
             </div>
-            <figcaption class="restauCaption">
-              <p><b>La palette du goût</b><br />Ménilmontant</p>
-              <div class="favIcon">
-                <i class="far fa-heart fa-2x like like-empty" aria-hidden="true"></i>
-                <i class="fas fa-heart fa-2x like like-full" aria-hidden="true"></i>
-              </div>
-            </figcaption>
-            <span class="new">Nouveau</span>
-          </figure>
-        </a>
-        <a href="noteenchantee.html" class="restauContainer">
-          <figure>
-            <div class="restauImg">
-              <img
-                src="public/images/restaurants/lanoteenchantee.jpg"
-                alt="la note enchantée"
-              />
+            <div class="restauContainer">
+              <figure>
+                <div class="restauImg">
+                  <a href="noteenchantee.html">
+                    <img
+                      src="public/images/restaurants/lanoteenchantee.jpg"
+                      alt="la note enchantée"
+                  /></a>
+                </div>
+                <figcaption class="restauCaption">
+                  <p>
+                    <a href="noteenchantee.html"
+                      ><b>La note enchantée</b><br />Charonne</a
+                    >
+                  </p>
+                  <div class="favIcon">
+                    <i
+                      class="far fa-heart fa-2x fav fav-empty"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-2x fav fav-full"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </figcaption>
+                <span class="new">Nouveau</span>
+              </figure>
             </div>
-            <figcaption class="restauCaption">
-              <p><b>La note enchantée</b><br />Charonne</p>
-              <div class="favIcon">
-                <i class="far fa-heart fa-2x like like-empty" aria-hidden="true"></i>
-                <i class="fas fa-heart fa-2x like like-full" aria-hidden="true"></i>
-              </div>
-            </figcaption>
-            <span class="new">Nouveau</span>
-          </figure>
-        </a>
-        <a href="francaise.html" class="restauContainer">
-          <figure>
-            <div class="restauImg">
-              <img
-                src="public/images/restaurants/alafrancaise.jpg"
-                alt="à la française"
-              />
+            <div class="restauContainer">
+              <figure>
+                <div class="restauImg">
+                  <a href="francaise.html">
+                    <img
+                      src="public/images/restaurants/alafrancaise.jpg"
+                      alt="à la française"
+                  /></a>
+                </div>
+                <figcaption class="restauCaption">
+                  <p>
+                    <a href="francaise.html"
+                      ><b>&Agrave; la française</b><br />Cité Rouge</a
+                    >
+                  </p>
+                  <div class="favIcon">
+                    <i
+                      class="far fa-heart fa-2x fav fav-empty"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-2x fav fav-full"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </figcaption>
+              </figure>
             </div>
-            <figcaption class="restauCaption">
-              <p><b>&Agrave; la française</b><br />Cité Rouge</p>
-              <div class="favIcon">
-                <i class="far fa-heart fa-2x like like-empty" aria-hidden="true"></i>
-                <i class="fas fa-heart fa-2x like like-full" aria-hidden="true"></i>
-              </div>            
-            </figcaption>
-          </figure>
-        </a>
-        <a href="delicesens.html" class="restauContainer">
-          <figure>
-            <div class="restauImg">
-              <img
-                src="public/images/restaurants/delicedessens.jpg"
-                alt="le délice des sens"
-              />
+            <div class="restauContainer">
+              <figure>
+                <div class="restauImg">
+                  <a href="delicesens.html">
+                    <img
+                      src="public/images/restaurants/delicedessens.jpg"
+                      alt="le délice des sens"
+                  /></a>
+                </div>
+                <figcaption class="restauCaption">
+                  <p>
+                    <a href="delicesens.html"
+                      ><b>Le délice des sens</b><br />Folie Méricourt</a
+                    >
+                  </p>
+                  <div class="favIcon">
+                    <i
+                      class="far fa-heart fa-2x fav fav-empty"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      class="fas fa-heart fa-2x fav fav-full"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </figcaption>
+              </figure>
             </div>
-            <figcaption class="restauCaption">
-              <p><b>Le délice des sens</b><br />Folie Méricourt</p>
-              <div class="favIcon">
-                <i class="far fa-heart fa-2x like like-empty" aria-hidden="true"></i>
-                <i class="fas fa-heart fa-2x like like-full" aria-hidden="true"></i>
-              </div>            
-            </figcaption>
-          </figure>
-        </a>
+        </div>
       </section>
     </main>
 

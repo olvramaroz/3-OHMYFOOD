@@ -84,7 +84,7 @@
 	box-shadow: 0rem 0.2rem 0.5rem lightgrey;
 	background-color: #fff;
 	display: flex;
-	align-items: end;
+	// align-items: end;
 	justify-content: space-between;
 	padding: .7rem;
 	margin: 1rem;
@@ -94,6 +94,7 @@
         font-size: 1.2rem;
         font-weight: bold;
         line-height: 1.5;
+        white-space: nowrap;
 }
 
 @mixin bold{

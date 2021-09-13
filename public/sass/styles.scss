@@ -10,6 +10,7 @@
 
 a, li{
     text-decoration: none;
+    color: #000;
 }
 
 object{
@@ -51,15 +52,30 @@ object{
         margin: 1.5rem 0;
         font-weight: 400;
     }
-    .btn-cta{
-        padding: nth($padding, 2) nth($padding, 3);
-        color: #fff;
-        @include radius-shadow;
-        @include cta-bg;
-        transition-duration: .20s;
+}
+
+.cta{
+    @include flexCenterX;
+
+}
+
+.btn-cta{
+    padding: nth($padding, 2) nth($padding, 3);
+    color: #fff;
+    @include radius-shadow;
+    @include cta-bg;  
+    overflow: hidden;
+    position: relative;
+    &:hover{
+        animation: ctaHov 1s ease-in-out both;
+        cursor: pointer;
     }
 }
 
+@keyframes ctaHov{
+    0%{opacity: 1;}
+    100%{opacity: .7;}
+}
 
 .fonction{
     padding: nth($padding, 3) nth($padding, 2);
@@ -122,7 +138,7 @@ object{
     @include new;
 }
 
-#list-restaurant{
+.list-restaurant{
     padding: 4rem nth($padding, 2);
     background-color: $color-bg;
 }
@@ -147,6 +163,7 @@ object{
     line-height: 1.5;
         p{
             font-size: 1.2rem;
+            white-space: nowrap;
         }
         .heartContainer{
             @include flexCenterY;
@@ -158,10 +175,10 @@ footer{
     color: $color-light;
     @include flexColumn;
     padding: nth($padding, 2) ;
-    line-height: 1.2rem;
         #logo{
             font-family: 'Shrikhand', sans-serif;
             padding-bottom: 1rem;
+            font-size: 1.3rem;
         }
         a{
             color: $color-light;
@@ -179,7 +196,8 @@ footer{
     
 }
 .txtFooter{
-    font-size: .8rem;
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
 .restauHeader{
@@ -207,6 +225,7 @@ footer{
     margin-top: -4rem;
     border-radius: 3rem 3rem 0 0;
     position: relative;
+    padding-bottom: 3rem;
     .restauName{
         @include flexCenterY;
         @include spaceBet;
@@ -232,13 +251,18 @@ footer{
     }
 }
 
+.menu{
+    margin-top: 2.5rem;
+}
+
 // ANIMATION DU COEUR EN :hover
 .favIcon{
     height: 2rem;
     width: 2rem;
     position: relative;
     background-color: #000;
-    margin: nth($margin, 1);
+    margin: .5rem;
+    cursor: pointer;
     &:hover::before {
         opacity: 1;
       } 
@@ -249,7 +273,7 @@ footer{
         background: linear-gradient(279deg, $color-primary 10%, $color-secondary 90%);      }
 }
 
-.favIcon::before, .like{
+.favIcon::before, .fav{
     position: absolute;
     top: 0;
     left: 0;
@@ -257,37 +281,42 @@ footer{
     width: 100%;
 }
 
-.favIcon:hover .like-empty{
+.favIcon:hover .fav-empty{
     opacity: 0;
 }
 
-.like{
+.fav{
     transition-duration: .25s;
     background-color: #f6f6f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     mix-blend-mode: lighten;
+    @include flexCenterXY;
+
 }
+
 
 // ANIMATION APPARITION SMOOTH DES CARTES DANS LE MENU
 
 .item-card{
     @include itemCard;
-    display: flex;
     @include animationCard;
-    overflow: hidden;
-    .item-name{
-        @include itemName;
-    }
-    .item-price{
-        @include bold;
-        padding-right: nth($padding, 4);
-        display: flex;
-        align-items: flex-end;
+    max-width: 100%;
+    &:hover{
+        cursor: pointer;
+        .item-select{
+            animation: translate-in .5s both;
+        }
+        .item-appear{
+            overflow: visible;
+        }
+        .item-price{
+            padding-right: nth($padding, 4);
+            animation: translate-in .5s ease-in-out both;
+        }
+        .fa-check-circle{
+            animation: check .5s ease-in-out backwards;
+        }
     }
 }
-
 @keyframes fadein-bottom{
     0%{
         transform: translateY(.5rem);
@@ -297,6 +326,26 @@ footer{
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.item-txt{
+    width: 70%;
+    .item-name{
+        @include itemName;
+    }
+    .item-desc{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.item-price{
+    @include bold;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transform: translateX(150%);
 }
 
 .card1{
@@ -311,7 +360,30 @@ footer{
 
 
 // ANIMATION APPARITION DE LA SELECTION VERTE EN :HOVER
+.item-appear{
+    animation: fadein-left .5s linear both;
+    overflow: hidden;
+}
+@keyframes fadein-left{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
 
+@keyframes translate-in{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(0%);}
+}
 
+.item-select{
+    @include flexCenterXY;
+    background-color: $color-tertiary;
+    width: 4.5rem;
+    margin: -1rem -1.1rem -1rem -1rem;
+    color: #fff;
+    transform: translateX(100%);
+}
 
-
+@keyframes check{
+    0%{transform: rotate(-270deg);}
+    100%{transform: rotate(0%);}
+}

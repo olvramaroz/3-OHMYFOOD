@@ -5,14 +5,95 @@
 @import "../utils/variables";
 
 //  TABLETTE 
-@media only screen and (min-width: 768px) and (max-width: 1023px){
+@media all and (min-width: 768px) and (max-width: 1023px){
 
+
+
+} // fermeture paramètres Tablette
+
+// PC 
+@media all and (min-width: 1024px){
+.intro{ /////// L'IMAGE BACKGROUND REFUSE DE S'AFFICHER
+    background: no-repeat url("../../images/bg-special.jpg")!important;
+    margin: 4rem!important;
+    h2{
+        font-size: 2rem;
+    }
+    p{
+        font-size: 1.5rem;
+    }
 }
 
-// MOBILE 
-@media only screen and (max-width: 767px){
+.btn-cta{
+    font-size: 1.2rem!important;
+}
 
+.fonction{
+    background: linear-gradient(45deg, $color-tertiary, #ee7752, #8ab2ab);
+    background-size: 300%;
+    animation: bg-gradient 12s ease infinite;
+    border-radius: 50rem 120rem;
+    .container > h2{
+        font-size: 2rem;
+        color: #fff;
+    }
+}
+@keyframes bg-gradient{
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+.fonction-txt{
+    font-size: 1.2rem;
+}
+
+.list-restaurant{
+    background-color: $color-light!important;
+    h2{
+        text-align: center;
+        font-size: 2rem;
+    }
+    &__Card{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 2rem;
+    }
+}
+.restauContainer{
+    width: 20%;
+    max-width: 20%;
+}
+
+//*page restaurant
+.menuContainer{
+    margin: -4rem 1rem 0 1rem;
+    .restauName{
+        justify-content: center!important;
+        flex-direction: column-reverse;
+        h2{
+            font-size: 2rem;
+        }
+        .favIcon::before{
+            opacity: 1;
+        }
+    }
+    .menus{
+        display: flex;
+        .menu{
+            flex-grow: 1;
+        }
+    }
+}
+.cta{
+	margin-top: 2.5rem;
+}
         
 
 
-} // fermeture paramètres mobile 
+} // fermeture paramètres PC 

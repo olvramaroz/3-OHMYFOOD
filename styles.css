@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 @media all and (min-width: 1024px) {
@@ -438,21 +439,22 @@ footer a {
   height: 2rem;
   width: 2rem;
   position: relative;
-  background-color: #000;
+  background-color: #8b8b8b;
   margin: 0.5rem;
+  padding: 0.2rem;
   cursor: pointer;
 }
 .favIcon:hover::before {
   opacity: 1;
 }
 .favIcon::before {
+  content: "";
   opacity: 0;
   transition: 0.5s;
-  content: "";
   background: linear-gradient(279deg, #9356DC 10%, #FF79DA 90%);
 }
 
-.favIcon::before, .fav {
+.favIcon::before, .fav, .favRestau {
   position: absolute;
   top: 0;
   left: 0;
@@ -462,15 +464,44 @@ footer a {
 
 .favIcon:hover .fav-empty {
   opacity: 0;
+  animation: fill 1s ease-in-out both;
 }
 
+@keyframes fill {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .fav {
-  transition-duration: 0.25s;
+  background-color: #fff;
+  mix-blend-mode: lighten;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+}
+
+/* Le coeur dans la page d'accueil se trouve sur un bg white alors que dans les pages
+restaurants, le bg est plutôt gris*/
+.favRestau {
   background-color: #f6f6f6;
   mix-blend-mode: lighten;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid transparent;
 }
 
 .item-card {

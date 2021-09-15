@@ -272,20 +272,22 @@ footer{
     height: 2rem;
     width: 2rem;
     position: relative;
-    background-color: #000;
+    background-color: rgb(139, 139, 139);
     margin: .5rem;
+    padding: .2rem;
     cursor: pointer;
     &:hover::before {
         opacity: 1;
       } 
       &::before {
+        content: "";
         opacity: 0;
         transition: .5s;
-        content: "";
-        background: linear-gradient(279deg, $color-primary 10%, $color-secondary 90%);      }
+        background: linear-gradient(279deg, $color-primary 10%, $color-secondary 90%);
+      }
 }
 
-.favIcon::before, .fav{
+.favIcon::before, .fav, .favRestau{
     position: absolute;
     top: 0;
     left: 0;
@@ -295,14 +297,29 @@ footer{
 
 .favIcon:hover .fav-empty{
     opacity: 0;
+    animation: fill 1s ease-in-out both;
+}
+@keyframes fill {
+    0%{opacity: 1;}
+    30%{opacity: .7;}
+    60%{opacity: .4;}
+    70%{opacity: .2;}
+    100%{opacity: 0;}
 }
 
 .fav{
-    transition-duration: .25s;
+    background-color: #fff;
+    mix-blend-mode: lighten;
+    @include flexCenterXY;
+    border: 1px solid transparent;
+}
+/* Le coeur dans la page d'accueil se trouve sur un bg white alors que dans les pages
+restaurants, le bg est plutôt gris*/
+.favRestau{
     background-color: #f6f6f6;
     mix-blend-mode: lighten;
     @include flexCenterXY;
-
+    border: 1px solid transparent;
 }
 
 // ANIMATION APPARITION SMOOTH DES CARTES DANS LE MENU

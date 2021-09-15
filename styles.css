@@ -40,8 +40,7 @@
 .intro > h2,
 .list-restaurant > h2 {
     font-size: 1.5rem !important;
-    padding: 1rem 0 !important;
-    text-transform: uppercase;
+    padding: 0.5rem 0 !important;
     color: #fff;
     background: linear-gradient(45deg, #99E2D0, #6b6b83, #3b8d99, #D16BA5);
     background-size: 400%;
@@ -50,7 +49,7 @@
   }
 
   .fonction-txt {
-    font-weight: normal;
+    font-weight: normal !important;
   }
 
   @keyframes bg-gradient {

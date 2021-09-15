@@ -13,14 +13,34 @@
 
 // PC 
 @media all and (min-width: 1024px){
-.intro{ /////// L'IMAGE BACKGROUND REFUSE DE S'AFFICHER
-    background: no-repeat url("../../images/bg-special.jpg")!important;
-    margin: 4rem!important;
-    h2{
-        font-size: 2rem;
+main{
+    background: url("specialBG.jpg");
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.accueil{
+    display: flex;
+    max-width: 100%;
+    flex-direction: row-reverse;
+    .intro{
+        width: 50%;
+        padding: 0;
     }
+    .fonction{
+        width: 30%;
+        margin: 4rem;
+        padding: 0;
+    }
+}
+
+.intro{
+    background-color: inherit!important;
+    margin: 4rem!important;
     p{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        margin: 6.3rem 0!important;
     }
 }
 
@@ -28,16 +48,23 @@
     font-size: 1.2rem!important;
 }
 
-.fonction{
-    background: linear-gradient(45deg, $color-tertiary, #ee7752, #8ab2ab);
-    background-size: 300%;
+.container > h2,
+.intro > h2,
+.list-restaurant > h2{
+    font-size: 1.5rem!important;
+    padding: 1rem 0!important;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(45deg, $color-tertiary, #6b6b83, #3b8d99, #D16BA5);    
+    background-size: 400%;
     animation: bg-gradient 12s ease infinite;
     border-radius: 50rem 120rem;
-    .container > h2{
-        font-size: 2rem;
-        color: #fff;
-    }
 }
+
+.fonction-txt{
+    font-weight: normal;
+}
+
 @keyframes bg-gradient{
     0% {
       background-position: 0% 50%;
@@ -54,7 +81,7 @@
 }
 
 .list-restaurant{
-    background-color: $color-light!important;
+    background-color: inherit!important;
     h2{
         text-align: center;
         font-size: 2rem;
@@ -66,11 +93,20 @@
     }
 }
 .restauContainer{
-    width: 20%;
-    max-width: 20%;
+    width: 24%;
+}
+
+footer{
+    align-items: center;
 }
 
 //*page restaurant
+.restauHeader{
+    i::before{
+        left: 3rem;
+    }
+}
+
 .menuContainer{
     margin: -4rem 1rem 0 1rem;
     .restauName{

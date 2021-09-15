@@ -56,6 +56,7 @@ object{
 
 .cta{
     @include flexCenterX;
+    padding-top: 1.5rem;
 
 }
 
@@ -67,9 +68,15 @@ object{
     overflow: hidden;
     position: relative;
     &:hover{
-        animation: ctaHov 1s ease-in-out both;
+        -webkit-animation: ctaHov 1s ease-in-out both;
+                animation: ctaHov 1s ease-in-out both;
         cursor: pointer;
     }
+}
+
+@-webkit-keyframes ctaHov{
+    0%{opacity: 1;}
+    100%{opacity: .7;}
 }
 
 @keyframes ctaHov{
@@ -93,6 +100,7 @@ object{
             @media screen and (min-width: 48rem){
                     display: flex;
                     justify-content: center;
+                    flex-direction: column;
                 }
         }
     }
@@ -119,7 +127,7 @@ object{
                 background-color: lighten($color-primary, 35%);
             }
             @media screen and (min-width: 48rem){
-                margin: 1rem;
+                margin: .5rem;
             }
         }
 
@@ -161,6 +169,7 @@ object{
     @include spaceBet;
     color: $color-default;
     line-height: 1.5;
+    background-color: #fff;
         p{
             font-size: 1.2rem;
             white-space: nowrap;
@@ -201,13 +210,16 @@ footer{
 }
 
 .restauHeader{
-    @include flexCenterY;
+    @include flexCenterX;
+    text-align: center;
     padding: 0.5rem 0 .5rem 1rem;
     position: relative;
+    i::before{
+        position: absolute;
+        left: 1rem;
+    }
     #logo{
         @include font-title;
-        text-align: center;
-        padding-left: 4rem;
         color: #000;
     }
 }
@@ -303,18 +315,31 @@ footer{
     &:hover{
         cursor: pointer;
         .item-select{
-            animation: translate-in .5s both;
+            -webkit-animation: translate-in .5s both;
+                    animation: translate-in .5s both;
         }
         .item-appear{
             overflow: visible;
         }
         .item-price{
             padding-right: nth($padding, 4);
-            animation: translate-in .5s ease-in-out both;
+            -webkit-animation: translate-in .5s ease-in-out both;
+                    animation: translate-in .5s ease-in-out both;
         }
         .fa-check-circle{
-            animation: check .5s ease-in-out backwards;
+            -webkit-animation: check .5s ease-in-out backwards;
+                    animation: check .5s ease-in-out backwards;
         }
+    }
+}
+@-webkit-keyframes fadein-bottom{
+    0%{
+        transform: translateY(.5rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 @keyframes fadein-bottom{
@@ -349,24 +374,37 @@ footer{
 }
 
 .card1{
-    animation-delay: map-get($delay-starter, card1);
+    -webkit-animation-delay: map-get($delay-starter, card1);
+            animation-delay: map-get($delay-starter, card1);
 }
 .card2{
-    animation-delay: map-get($delay-starter, card2);
+    -webkit-animation-delay: map-get($delay-starter, card2);
+            animation-delay: map-get($delay-starter, card2);
 }
 .card3{
-    animation-delay: map-get($delay-starter, card3);
+    -webkit-animation-delay: map-get($delay-starter, card3);
+            animation-delay: map-get($delay-starter, card3);
 }
 
 
 // ANIMATION APPARITION DE LA SELECTION VERTE EN :HOVER
 .item-appear{
-    animation: fadein-left .5s linear both;
+    -webkit-animation: fadein-left .5s linear both;
+            animation: fadein-left .5s linear both;
     overflow: hidden;
+}
+@-webkit-keyframes fadein-left{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
 @keyframes fadein-left{
     0%{opacity: 0;}
     100%{opacity: 1;}
+}
+
+@-webkit-keyframes translate-in{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(0%);}
 }
 
 @keyframes translate-in{
@@ -383,7 +421,64 @@ footer{
     transform: translateX(100%);
 }
 
+@-webkit-keyframes check{
+    0%{transform: rotate(-270deg);}
+    100%{transform: rotate(0%);}
+}
+
 @keyframes check{
     0%{transform: rotate(-270deg);}
     100%{transform: rotate(0%);}
+}
+
+
+// LOADER
+.loader{
+    // Je donne les mesures nécessaires pour couvrir l'ensemble de mon loader
+    @include flexCenterXY;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: fixed;
+    // je lui ajoute une opacity et un bg pour masquer le site
+    opacity: 0.98;
+    background-color: #fff;
+    // Animation pour le démarrage de la page
+    animation: loading 2s ease-in-out forwards;
+}
+.circle{
+    // Je lui donne des mesures 
+    width: 1rem;
+    height: 1rem;
+    margin: 5px;
+    // Je lui donne une forme ronde
+    border-radius: 50% 20%;
+    // J'anime mes circle pour qu'ils grossissent et tourne
+    transform: scale(0); //car la valeur par défaut de scale est de 1
+    animation: grow 1s linear infinite;
+}
+    // Je crée la forma de mon loader avec mes éléments circle
+    .circle1{
+        background-color: $color-primary;
+    }
+    .circle2{
+        background-color: $color-secondary;
+        // je delay l'animation de celui-ci
+        animation-delay: .25s;
+    }
+    .circle3{
+        background-color: $color-tertiary;
+        // je delay l'animation de celui-ci
+        animation-delay: .45s;
+    }
+
+// Je paramètre mes animations
+@keyframes loading{
+    0%{visibility: visible;}
+    100%{visibility: hidden;}
+}
+@keyframes grow{
+    0%{transform: scale(1);}
+    50%{transform: scale(1.5);}
+    100%{transform: scale(2);}
 }

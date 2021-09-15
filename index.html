@@ -12,10 +12,16 @@
     ></script>
   </head>
   <body>
+    <div class="loader">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+    </div>
     <!-- HEADER  -->
     <!-- LOGO  -->
-    <object data="header.html" type="text/html"></object>
-
+    <header class="mainHeader">
+      <a href="index.html"><h1 id="logo">ohmyfood</h1></a>
+    </header>
     <main>
       <!-- RECHERCHE  -->
       <form id="search">
@@ -60,7 +66,7 @@
       </div>
 
       <!-- RESTAURANTS  -->
-      <section class="list-restaurant">
+      <section id="list-restaurant" class="list-restaurant">
         <h2>Restaurants</h2>
         <div class="list-restaurant__Card">
             <div class="restauContainer">
@@ -182,6 +188,18 @@
     </main>
 
     <!-- FOOTER  -->
-    <object data="footer.html" type="text/html"></object>
+    <footer>
+      <a href="#"><p id="logo">ohmyfood</p></a>
+      <div class="iconFootContainer">
+        <i class="fas fa-utensils fa-xs icon7"></i>
+        <span class="txtFooter"><a href="#">Proposer un restaurant</a></span>
+      </div>
+      <div class="iconFootContainer">
+        <i class="fas fa-hands-helping fa-xs icon5"></i>
+        <span class="txtFooter"><a href="#">Devenir partenaire</a></span>
+      </div>
+      <a href="#"><p class="txtFooter">Mentions légales</p></a>
+      <a href="#"><p class="txtFooter">Contact</p></a>
+    </footer>
   </body>
 </html>

@@ -479,7 +479,8 @@ footer a {
   justify-content: space-between;
   padding: 0.7rem;
   margin: 1rem;
-  animation: fadein-bottom 1s cubic-bezier(0.4, 0.575, 0.565, 1) both;
+  overflow: hidden;
+  animation: fadein-bottom 1.5s ease-in-out both;
   max-width: 100%;
 }
 .item-card:hover {
@@ -504,7 +505,7 @@ footer a {
 
 @-webkit-keyframes fadein-bottom {
   0% {
-    transform: translateY(0.5rem);
+    transform: translateY(2rem);
     opacity: 0;
   }
   100% {
@@ -514,7 +515,7 @@ footer a {
 }
 @keyframes fadein-bottom {
   0% {
-    transform: translateY(0.5rem);
+    transform: translateY(2rem);
     opacity: 0;
   }
   100% {
@@ -558,6 +559,41 @@ footer a {
 .card3 {
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
+}
+
+.card4 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.card5 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.card6 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.card7 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.card8 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.card9 {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.card10 {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
 .item-appear {

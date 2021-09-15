@@ -305,7 +305,6 @@ footer{
 
 }
 
-
 // ANIMATION APPARITION SMOOTH DES CARTES DANS LE MENU
 
 .item-card{
@@ -334,7 +333,7 @@ footer{
 }
 @-webkit-keyframes fadein-bottom{
     0%{
-        transform: translateY(.5rem);
+        transform: translateY(2rem);
         opacity: 0;
     }
     100%{
@@ -344,7 +343,7 @@ footer{
 }
 @keyframes fadein-bottom{
     0%{
-        transform: translateY(.5rem);
+        transform: translateY(2rem);
         opacity: 0;
     }
     100%{
@@ -385,12 +384,39 @@ footer{
     -webkit-animation-delay: map-get($delay-starter, card3);
             animation-delay: map-get($delay-starter, card3);
 }
-
+.card4{
+    -webkit-animation-delay: map-get($delay-starter, card4);
+            animation-delay: map-get($delay-starter, card4);
+}
+.card5{
+    -webkit-animation-delay: map-get($delay-main, card5);
+            animation-delay: map-get($delay-main, card5);
+}
+.card6{
+    -webkit-animation-delay: map-get($delay-main, card6);
+            animation-delay: map-get($delay-main, card6);
+}
+.card7{
+    -webkit-animation-delay: map-get($delay-main, card7);
+            animation-delay: map-get($delay-main, card7);
+}
+.card8{
+    -webkit-animation-delay: map-get($delay-dessert, card8);
+            animation-delay: map-get($delay-dessert, card8);
+}
+.card9{
+    -webkit-animation-delay: map-get($delay-dessert, card9);
+            animation-delay: map-get($delay-dessert, card9);
+}
+.card10{
+    -webkit-animation-delay: map-get($delay-dessert, card10);
+            animation-delay: map-get($delay-dessert, card10);
+}
 
 // ANIMATION APPARITION DE LA SELECTION VERTE EN :HOVER
 .item-appear{
     -webkit-animation: fadein-left .5s linear both;
-            animation: fadein-left .5s linear both;
+    animation: fadein-left .5s linear both;
     overflow: hidden;
 }
 @-webkit-keyframes fadein-left{
@@ -430,7 +456,6 @@ footer{
     0%{transform: rotate(-270deg);}
     100%{transform: rotate(0%);}
 }
-
 
 // LOADER
 .loader{

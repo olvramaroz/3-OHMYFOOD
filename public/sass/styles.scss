@@ -98,9 +98,8 @@ object{
             list-style: none;
             counter-reset: myCounter;
             @media screen and (min-width: 48rem){
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
+                @include flexCenterXY;
+                flex-direction: column;
                 }
         }
     }
@@ -252,6 +251,7 @@ footer{
     padding-left: nth($padding, 2);
     position: relative;
     font-weight: normal;
+    margin-bottom: .5rem;
     &::after{
         content: "";
         width: 3rem;

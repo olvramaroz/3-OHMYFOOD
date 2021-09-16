@@ -149,9 +149,10 @@ object {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   position: relative;
 }
-.mainHeader #logo {
+.mainHeader .logo {
   font-family: "Shrikhand", sans-serif;
   font-weight: normal;
+  font-size: 1.8rem;
   text-align: center;
   color: #000;
 }
@@ -172,7 +173,7 @@ object {
 }
 
 .intro {
-  padding: 2rem;
+  padding: 2rem 2rem 5rem 2rem;
   text-align: center;
   background-color: #F6F6F6;
 }
@@ -180,7 +181,7 @@ object {
   padding: 0 2rem;
 }
 .intro p {
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 3rem 0;
   font-weight: 400;
 }
 
@@ -320,6 +321,7 @@ object {
   border-radius: 1rem;
   box-shadow: 0rem 0.2rem 0.5rem lightgrey;
   position: relative;
+  overflow: hidden;
 }
 .restauContainer .restauImg {
   border-top-left-radius: 1.3rem;
@@ -356,9 +358,9 @@ footer {
   color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.5rem;
 }
-footer #logo {
+footer .logo {
   font-family: "Shrikhand", sans-serif;
   padding-bottom: 1rem;
   font-size: 1.3rem;
@@ -395,9 +397,10 @@ footer a {
   position: absolute;
   left: 1rem;
 }
-.restauHeader #logo {
+.restauHeader .logo {
   font-family: "Shrikhand", sans-serif;
   font-weight: normal;
+  font-size: 1.8rem;
   color: #000;
 }
 
@@ -428,6 +431,7 @@ footer a {
 .menuContainer h2 {
   font-family: "Shrikhand", sans-serif;
   font-weight: normal;
+  font-size: 1.8rem;
 }
 
 .menu-title {
@@ -479,9 +483,27 @@ footer a {
 
 .favIcon:hover .fav-empty {
   opacity: 0;
+  -webkit-animation: fill 1s ease-in-out both;
   animation: fill 1s ease-in-out both;
 }
 
+@-webkit-keyframes fill {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes fill {
   0% {
     opacity: 1;
@@ -707,7 +729,7 @@ restaurants, le bg est plutôt gris*/
     transform: rotate(-270deg);
   }
   100% {
-    transform: rotate(0%);
+    transform: rotate(0deg);
   }
 }
 .loader {
@@ -720,6 +742,7 @@ restaurants, le bg est plutôt gris*/
   position: fixed;
   opacity: 0.98;
   background-color: #fff;
+  -webkit-animation: loading 1.5s ease-in-out forwards;
   animation: loading 1.5s ease-in-out forwards;
 }
 
@@ -729,6 +752,7 @@ restaurants, le bg est plutôt gris*/
   margin: 2px;
   border-radius: 50% 20%;
   transform: scale(0);
+  -webkit-animation: grow 1s linear infinite;
   animation: grow 1s linear infinite;
 }
 
@@ -738,20 +762,41 @@ restaurants, le bg est plutôt gris*/
 
 .circle2 {
   background-color: #FF79DA;
+  -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
 
 .circle3 {
   background-color: #99E2D0;
+  -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
 }
 
+@-webkit-keyframes loading {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
 @keyframes loading {
   0% {
     visibility: visible;
   }
   100% {
     visibility: hidden;
+  }
+}
+@-webkit-keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(2);
   }
 }
 @keyframes grow {

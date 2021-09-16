@@ -1,6 +1,15 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .item-txt {
+    width: 88% !important;
+  }
+
+  footer {
+    align-items: center;
+  }
+}
 @media all and (min-width: 1024px) {
   main {
     background: url("specialBG.jpg");
@@ -115,6 +124,10 @@
 
   .cta {
     margin-top: 2.5rem;
+  }
+
+  .item-txt {
+    width: 85% !important;
   }
 }
 * {
@@ -262,6 +275,7 @@ object {
 }
 .fonction-item:hover {
   background-color: #f2eafb;
+  cursor: pointer;
 }
 @media screen and (min-width: 48rem) {
   .fonction-item {
@@ -326,6 +340,7 @@ object {
   color: #000;
   line-height: 1.5;
   background-color: #fff;
+  cursor: pointer;
 }
 .restauCaption p {
   font-size: 1.2rem;
@@ -520,16 +535,14 @@ restaurants, le bg est plutôt gris*/
   cursor: pointer;
 }
 .item-card:hover .item-select {
-  -webkit-animation: translate-in 0.5s both;
-  animation: translate-in 0.5s both;
+  transform: translateX(-9%);
 }
 .item-card:hover .item-appear {
   overflow: visible;
 }
 .item-card:hover .item-price {
-  padding-right: 1.5rem;
-  -webkit-animation: translate-in 0.5s ease-in-out both;
-  animation: translate-in 0.5s ease-in-out both;
+  transform: translateX(-80%);
+  transition: 0.5s ease-in-out;
 }
 .item-card:hover .fa-check-circle {
   -webkit-animation: check 0.5s ease-in-out backwards;
@@ -557,13 +570,15 @@ restaurants, le bg est plutôt gris*/
   }
 }
 .item-txt {
-  width: 70%;
+  width: 72%;
 }
 .item-txt .item-name {
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.5;
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .item-txt .item-desc {
   overflow: hidden;
@@ -576,7 +591,7 @@ restaurants, le bg est plutôt gris*/
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  transform: translateX(150%);
+  transform: translateX(120%);
 }
 
 .card1 {
@@ -672,10 +687,11 @@ restaurants, le bg est plutôt gris*/
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
-  width: 4.5rem;
+  width: 4rem;
   margin: -1rem -1.1rem -1rem -1rem;
   color: #fff;
   transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
 }
 
 @-webkit-keyframes check {
@@ -704,13 +720,13 @@ restaurants, le bg est plutôt gris*/
   position: fixed;
   opacity: 0.98;
   background-color: #fff;
-  animation: loading 2s ease-in-out forwards;
+  animation: loading 1.5s ease-in-out forwards;
 }
 
 .circle {
-  width: 1rem;
-  height: 1rem;
-  margin: 5px;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 2px;
   border-radius: 50% 20%;
   transform: scale(0);
   animation: grow 1s linear infinite;
@@ -722,12 +738,12 @@ restaurants, le bg est plutôt gris*/
 
 .circle2 {
   background-color: #FF79DA;
-  animation-delay: 0.25s;
+  animation-delay: 0.2s;
 }
 
 .circle3 {
   background-color: #99E2D0;
-  animation-delay: 0.45s;
+  animation-delay: 0.4s;
 }
 
 @keyframes loading {

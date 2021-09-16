@@ -6,8 +6,13 @@
 
 //  TABLETTE 
 @media all and (min-width: 768px) and (max-width: 1023px){
+.item-txt{
+    width: 88%!important;
+}
 
-
+footer{
+    align-items: center;
+}
 
 } // fermeture paramètres Tablette
 
@@ -128,7 +133,10 @@ footer{
 .cta{
 	margin-top: 2.5rem;
 }
-        
+
+.item-txt{
+    width: 85%!important;
+}
 
 
 } // fermeture paramètres PC 

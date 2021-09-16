@@ -124,11 +124,12 @@ object{
             }
             &:hover{
                 background-color: lighten($color-primary, 35%);
+                cursor: pointer;
             }
             @media screen and (min-width: 48rem){
                 margin: .5rem;
             }
-        }
+}
 
 .icon-fonction{
     padding-left: .5rem;
@@ -169,6 +170,7 @@ object{
     color: $color-default;
     line-height: 1.5;
     background-color: #fff;
+    cursor: pointer;
         p{
             font-size: 1.2rem;
             white-space: nowrap;
@@ -331,16 +333,14 @@ restaurants, le bg est plutôt gris*/
     &:hover{
         cursor: pointer;
         .item-select{
-            -webkit-animation: translate-in .5s both;
-                    animation: translate-in .5s both;
+            transform: translateX(-9%);
         }
         .item-appear{
             overflow: visible;
         }
         .item-price{
-            padding-right: nth($padding, 4);
-            -webkit-animation: translate-in .5s ease-in-out both;
-                    animation: translate-in .5s ease-in-out both;
+            transform: translateX(-80%);
+            transition: .5s ease-in-out;
         }
         .fa-check-circle{
             -webkit-animation: check .5s ease-in-out backwards;
@@ -370,7 +370,7 @@ restaurants, le bg est plutôt gris*/
 }
 
 .item-txt{
-    width: 70%;
+    width: 72%;
     .item-name{
         @include itemName;
     }
@@ -378,7 +378,7 @@ restaurants, le bg est plutôt gris*/
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-    }
+        }
 }
 
 .item-price{
@@ -386,7 +386,7 @@ restaurants, le bg est plutôt gris*/
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    transform: translateX(150%);
+    transform: translateX(120%);
 }
 
 .card1{
@@ -458,10 +458,11 @@ restaurants, le bg est plutôt gris*/
 .item-select{
     @include flexCenterXY;
     background-color: $color-tertiary;
-    width: 4.5rem;
+    width: 4rem;
     margin: -1rem -1.1rem -1rem -1rem;
     color: #fff;
     transform: translateX(100%);
+    transition: all .5s ease-in-out;
 }
 
 @-webkit-keyframes check{
@@ -486,32 +487,32 @@ restaurants, le bg est plutôt gris*/
     opacity: 0.98;
     background-color: #fff;
     // Animation pour le démarrage de la page
-    animation: loading 2s ease-in-out forwards;
+    animation: loading 1.5s ease-in-out forwards;
 }
 .circle{
     // Je lui donne des mesures 
-    width: 1rem;
-    height: 1rem;
-    margin: 5px;
-    // Je lui donne une forme ronde
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 2px;
+    // Je lui donne une forme ronde 
     border-radius: 50% 20%;
-    // J'anime mes circle pour qu'ils grossissent et tourne
+    // J'anime mes circle pour qu'ils grossissent
     transform: scale(0); //car la valeur par défaut de scale est de 1
     animation: grow 1s linear infinite;
 }
-    // Je crée la forma de mon loader avec mes éléments circle
+    // Je donne des couleurs à mes éléments circle
     .circle1{
         background-color: $color-primary;
     }
     .circle2{
         background-color: $color-secondary;
         // je delay l'animation de celui-ci
-        animation-delay: .25s;
+        animation-delay: .20s;
     }
     .circle3{
         background-color: $color-tertiary;
         // je delay l'animation de celui-ci
-        animation-delay: .45s;
+        animation-delay: .40s;
     }
 
 // Je paramètre mes animations

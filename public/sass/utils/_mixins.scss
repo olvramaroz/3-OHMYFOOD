@@ -94,7 +94,9 @@
         font-size: 1.2rem;
         font-weight: bold;
         line-height: 1.5;
+        overflow: hidden;
         white-space: nowrap;
+        text-overflow: ellipsis;
 }
 
 @mixin bold{

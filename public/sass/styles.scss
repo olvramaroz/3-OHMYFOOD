@@ -5,7 +5,6 @@
 *{
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    // scroll-behavior: smooth;
 }
 
 a, li{
@@ -96,10 +95,6 @@ object{
             padding: 0;
             list-style: none;
             counter-reset: myCounter;
-            @media screen and (min-width: 48rem){
-                @include flexCenterXY;
-                flex-direction: column;
-                }
         }
     }
 .fonction-item{
@@ -124,9 +119,6 @@ object{
             &:hover{
                 background-color: lighten($color-primary, 35%);
                 cursor: pointer;
-            }
-            @media screen and (min-width: 48rem){
-                margin: .5rem;
             }
 }
 
@@ -285,7 +277,7 @@ footer{
         content: "";
         opacity: 0;
         transition: .5s;
-        background: linear-gradient(279deg, $color-primary 10%, $color-secondary 90%);
+        background: linear-gradient(180deg, $color-primary 10%, $color-secondary 90%);
       }
 }
 
@@ -378,23 +370,33 @@ restaurants, le bg est plutôt gris*/
 }
 
 .item-txt{
-    width: 72%;
-    .item-name{
-        @include itemName;
+    @include spaceOverFlow;
+    flex-grow: 1;
+    width: 200%;
+    &:hover{
+        @include spaceOverFlow;
     }
-    .item-desc{
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        }
+}
+.item-name{
+    @include itemName;
+    &:hover{
+        @include spaceOverFlow;
+    }
+}
+.item-desc{
+    @include spaceOverFlow;
+    &:hover{
+        @include spaceOverFlow;
+    }
 }
 
 .item-price{
     @include bold;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
-    transform: translateX(120%);
+    margin-right: .5rem;
+    transform: translateX(80%);
+    transition: .5s ease-in-out;
 }
 
 .card1{
@@ -466,7 +468,7 @@ restaurants, le bg est plutôt gris*/
 .item-select{
     @include flexCenterXY;
     background-color: $color-tertiary;
-    width: 4rem;
+    width: 8rem;
     margin: -1rem -1.1rem -1rem -1rem;
     color: #fff;
     transform: translateX(100%);
@@ -495,14 +497,14 @@ restaurants, le bg est plutôt gris*/
     opacity: 0.98;
     background-color: #fff;
     // Animation pour le démarrage de la page
-    -webkit-animation: loading 1.5s ease-in-out forwards;
-            animation: loading 1.5s ease-in-out forwards;
+    -webkit-animation: loading 3s ease-in-out forwards;
+            animation: loading 3s ease-in-out forwards;
 }
 .circle{
     // Je lui donne des mesures 
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: 2px;
+    width: 2rem;
+    height: 2rem;
+    margin: 5px;
     // Je lui donne une forme ronde 
     border-radius: 50% 20%;
     // J'anime mes circle pour qu'ils grossissent

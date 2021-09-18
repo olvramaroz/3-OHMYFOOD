@@ -11,83 +11,42 @@
   }
 }
 @media all and (min-width: 1024px) {
-  main {
-    background: url("specialBG.jpg");
-    background-size: 150%;
-    background-repeat: no-repeat;
-    background-position: left center;
-  }
-
   .accueil {
     display: flex;
-    max-width: 100%;
-    flex-direction: row-reverse;
   }
   .accueil .intro {
-    width: 50%;
+    padding: 2rem 2rem 3rem 2rem !important;
+    text-align: start;
+  }
+  .accueil .intro h2 {
     padding: 0;
   }
-  .accueil .fonction {
-    width: 30%;
-    margin: 4rem;
-    padding: 0;
-  }
 
-  .intro {
-    background-color: inherit !important;
-    margin: 4rem !important;
+  .fonction {
+    flex-grow: 1;
   }
-  .intro p {
-    font-size: 1.2rem;
-    margin: 6.3rem 0 !important;
+  .fonction .fonction-list {
+    display: flex;
+    justify-content: center;
   }
-
-  .btn-cta {
-    font-size: 1.2rem !important;
+  .fonction .fonction-list .fonction-item {
+    margin: 0 1rem;
   }
-
-  .container > h2,
-.intro > h2,
-.list-restaurant > h2 {
-    font-size: 1.5rem !important;
-    padding: 0.5rem 0 !important;
-    color: #fff;
-    background: linear-gradient(45deg, #99E2D0, #6b6b83, #3b8d99, #D16BA5);
-    background-size: 400%;
-    animation: bg-gradient 12s ease infinite;
-    border-radius: 50rem 120rem;
-  }
-
-  .fonction-txt {
-    font-weight: normal !important;
-  }
-
-  @keyframes bg-gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  .fonction-txt {
-    font-size: 1.2rem;
+  .fonction .fonction-list .fonction-txt {
+    padding-left: 1rem !important;
+    font-weight: normal;
   }
 
   .list-restaurant {
     background-color: inherit !important;
+    padding: 2rem 1rem !important;
   }
   .list-restaurant h2 {
-    text-align: center;
-    font-size: 2rem;
+    margin-left: 1rem;
   }
   .list-restaurant__Card {
     display: flex;
     justify-content: space-around;
-    padding-top: 2rem;
   }
 
   .restauContainer {
@@ -95,7 +54,15 @@
   }
 
   footer {
-    align-items: center;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    height: 16vh;
+  }
+  footer .logo {
+    padding-bottom: 0 !important;
+  }
+  footer .iconFootContainer {
+    display: block !important;
   }
 
   .restauHeader i::before {
@@ -112,9 +79,6 @@
   .menuContainer .restauName h2 {
     font-size: 2rem;
   }
-  .menuContainer .restauName .favIcon::before {
-    opacity: 1;
-  }
   .menuContainer .menus {
     display: flex;
   }
@@ -124,10 +88,6 @@
 
   .cta {
     margin-top: 2.5rem;
-  }
-
-  .item-txt {
-    width: 85% !important;
   }
 }
 * {
@@ -240,14 +200,6 @@ object {
   list-style: none;
   counter-reset: myCounter;
 }
-@media screen and (min-width: 48rem) {
-  .fonction .fonction-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-}
 
 .fonction-item {
   margin: 1rem 0 1rem 0.75rem;
@@ -277,11 +229,6 @@ object {
 .fonction-item:hover {
   background-color: #f2eafb;
   cursor: pointer;
-}
-@media screen and (min-width: 48rem) {
-  .fonction-item {
-    margin: 0.5rem;
-  }
 }
 
 .icon-fonction {
@@ -470,7 +417,7 @@ footer a {
   content: "";
   opacity: 0;
   transition: 0.5s;
-  background: linear-gradient(279deg, #9356DC 10%, #FF79DA 90%);
+  background: linear-gradient(180deg, #9356DC 10%, #FF79DA 90%);
 }
 
 .favIcon::before, .fav, .favRestau {
@@ -546,7 +493,6 @@ restaurants, le bg est plutôt gris*/
   box-shadow: 0rem 0.2rem 0.5rem lightgrey;
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
   padding: 0.7rem;
   margin: 0.5rem;
   overflow: hidden;
@@ -592,17 +538,35 @@ restaurants, le bg est plutôt gris*/
   }
 }
 .item-txt {
-  width: 72%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  width: 200%;
 }
-.item-txt .item-name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  line-height: 1.5;
+.item-txt:hover {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.item-txt .item-desc {
+
+.item-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.item-name:hover {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.item-desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item-desc:hover {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -612,8 +576,9 @@ restaurants, le bg est plutôt gris*/
   font-weight: bold;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
-  transform: translateX(120%);
+  margin-right: 0.5rem;
+  transform: translateX(80%);
+  transition: 0.5s ease-in-out;
 }
 
 .card1 {
@@ -709,7 +674,7 @@ restaurants, le bg est plutôt gris*/
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
-  width: 4rem;
+  width: 8rem;
   margin: -1rem -1.1rem -1rem -1rem;
   color: #fff;
   transform: translateX(100%);
@@ -729,7 +694,7 @@ restaurants, le bg est plutôt gris*/
     transform: rotate(-270deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(0%);
   }
 }
 .loader {
@@ -742,14 +707,14 @@ restaurants, le bg est plutôt gris*/
   position: fixed;
   opacity: 0.98;
   background-color: #fff;
-  -webkit-animation: loading 1.5s ease-in-out forwards;
-  animation: loading 1.5s ease-in-out forwards;
+  -webkit-animation: loading 3s ease-in-out forwards;
+  animation: loading 3s ease-in-out forwards;
 }
 
 .circle {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: 2px;
+  width: 2rem;
+  height: 2rem;
+  margin: 5px;
   border-radius: 50% 20%;
   transform: scale(0);
   -webkit-animation: grow 1s linear infinite;

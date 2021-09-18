@@ -417,7 +417,7 @@ footer a {
   content: "";
   opacity: 0;
   transition: 0.5s;
-  background: linear-gradient(180deg, #9356DC 10%, #FF79DA 90%);
+  background: linear-gradient(180deg, #9356DC 10%, #FF79DA 60%);
 }
 
 .favIcon::before, .fav, .favRestau {

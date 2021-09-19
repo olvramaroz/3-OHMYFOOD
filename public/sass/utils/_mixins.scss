@@ -84,17 +84,12 @@
     border-radius: 1rem;
 	box-shadow: 0rem 0.2rem 0.5rem lightgrey;
 	background-color: #fff;
-	display: flex;
-	// justify-content: space-between;
-	padding: .7rem;
-	margin: .5rem;
+    justify-content: space-between;
+    position: relative;
     overflow: hidden;
-}
-
-@mixin itemName{
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.5;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
 }
 
 @mixin bold{
@@ -108,10 +103,4 @@
 @mixin animationCard{
     //Je fais apparaitre les cartes de manière smooth
     animation: fadein-bottom 1.5s ease-in-out both;
-}
-
-@mixin spaceOverFlow {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }

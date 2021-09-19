@@ -1,13 +1,22 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
-@media all and (min-width: 768px) and (max-width: 1023px) {
-  .item-txt {
-    width: 88% !important;
-  }
-
+@media all and (min-width: 768px) {
   footer {
-    align-items: center;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    height: 16vh;
+  }
+  footer .logo {
+    padding-bottom: 0 !important;
+  }
+  footer .iconFootContainer {
+    display: block !important;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .fonction-list {
+    display: flex;
   }
 }
 @media all and (min-width: 1024px) {
@@ -53,18 +62,6 @@
     width: 24%;
   }
 
-  footer {
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    height: 16vh;
-  }
-  footer .logo {
-    padding-bottom: 0 !important;
-  }
-  footer .iconFootContainer {
-    display: block !important;
-  }
-
   .restauHeader i::before {
     left: 3rem;
   }
@@ -79,15 +76,15 @@
   .menuContainer .restauName h2 {
     font-size: 2rem;
   }
-  .menuContainer .menus {
-    display: flex;
-  }
-  .menuContainer .menus .menu {
-    flex-grow: 1;
-  }
 
   .cta {
     margin-top: 2.5rem;
+  }
+
+  .menus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
   }
 }
 * {
@@ -300,107 +297,6 @@ object {
   align-items: center;
 }
 
-footer {
-  background-color: #353535;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-}
-footer .logo {
-  font-family: "Shrikhand", sans-serif;
-  padding-bottom: 1rem;
-  font-size: 1.3rem;
-}
-footer a {
-  color: #fff;
-}
-
-.iconFootContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.iconFootContainer .icon5 {
-  margin-right: 0.5rem;
-}
-.iconFootContainer .icon7 {
-  margin-right: 0.7rem;
-}
-
-.txtFooter {
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.restauHeader {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 0.5rem 0 0.5rem 1rem;
-  position: relative;
-}
-.restauHeader i::before {
-  position: absolute;
-  left: 1rem;
-}
-.restauHeader .logo {
-  font-family: "Shrikhand", sans-serif;
-  font-weight: normal;
-  font-size: 1.8rem;
-  color: #000;
-}
-
-.banner {
-  height: 300px;
-  overflow: hidden;
-}
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.menuContainer {
-  background-color: #F6F6F6;
-  margin-top: -4rem;
-  border-radius: 3rem 3rem 0 0;
-  position: relative;
-  padding-bottom: 3rem;
-}
-.menuContainer .restauName {
-  display: flex;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-.menuContainer h2 {
-  font-family: "Shrikhand", sans-serif;
-  font-weight: normal;
-  font-size: 1.8rem;
-}
-
-.menu-title {
-  padding-left: 1rem;
-  position: relative;
-  font-weight: normal;
-  margin-bottom: 0.5rem;
-}
-.menu-title::after {
-  content: "";
-  width: 3rem;
-  height: 0.25rem;
-  background-color: #99E2D0;
-  position: absolute;
-  left: 1rem;
-  bottom: -0.3rem;
-}
-
-.menu {
-  margin-top: 2.5rem;
-}
-
 .favIcon {
   height: 2rem;
   width: 2rem;
@@ -488,33 +384,127 @@ restaurants, le bg est plutôt gris*/
   border: 1px solid transparent;
 }
 
+footer {
+  background-color: #353535;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+footer .logo {
+  font-family: "Shrikhand", sans-serif;
+  padding-bottom: 1rem;
+  font-size: 1.3rem;
+}
+footer a {
+  color: #fff;
+}
+
+.iconFootContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.iconFootContainer .icon5 {
+  margin-right: 0.5rem;
+}
+.iconFootContainer .icon7 {
+  margin-right: 0.7rem;
+}
+
+.txtFooter {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.restauHeader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 1rem;
+  position: relative;
+}
+.restauHeader i::before {
+  position: absolute;
+  left: 1rem;
+}
+.restauHeader .logo {
+  font-family: "Shrikhand", sans-serif;
+  font-weight: normal;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.banner {
+  height: 300px;
+  overflow: hidden;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menuContainer {
+  background-color: #F6F6F6;
+  margin-top: -4rem;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  padding-bottom: 3rem;
+}
+.menuContainer .restauName {
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.menuContainer h2 {
+  font-family: "Shrikhand", sans-serif;
+  font-weight: normal;
+  font-size: 1.8rem;
+}
+
+.menus {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0 1rem;
+}
+.menus .menu {
+  display: grid;
+  grid-gap: 15px;
+  margin-top: 2.5rem;
+}
+
+.menu-title h3 {
+  position: relative;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.menu-title h3::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+}
+
 .item-card {
+  display: flex;
+  align-items: center;
   border-radius: 1rem;
   box-shadow: 0rem 0.2rem 0.5rem lightgrey;
   background-color: #fff;
-  display: flex;
-  padding: 0.7rem;
-  margin: 0.5rem;
+  justify-content: space-between;
+  position: relative;
   overflow: hidden;
-  animation: fadein-bottom 1.5s ease-in-out both;
-  max-width: 100%;
-}
-.item-card:hover {
   cursor: pointer;
-}
-.item-card:hover .item-select {
-  transform: translateX(-9%);
-}
-.item-card:hover .item-appear {
-  overflow: visible;
-}
-.item-card:hover .item-price {
-  transform: translateX(-80%);
-  transition: 0.5s ease-in-out;
-}
-.item-card:hover .fa-check-circle {
-  -webkit-animation: check 0.5s ease-in-out backwards;
-  animation: check 0.5s ease-in-out backwards;
+  width: 100%;
+  height: 60px;
+  animation: fadein-bottom 1.5s ease-in-out both;
 }
 
 @-webkit-keyframes fadein-bottom {
@@ -537,48 +527,80 @@ restaurants, le bg est plutôt gris*/
     opacity: 1;
   }
 }
+.item-card:hover .item-select {
+  transform: translateX(0%);
+  transition: 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-card:hover .item-price {
+  padding-right: 70px;
+}
+
+.item-card:hover .fa-check-circle {
+  -webkit-animation: check 0.5s ease forwards;
+  animation: check 0.5s ease forwards;
+}
+
+@-webkit-keyframes check {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes check {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.item {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
 .item-txt {
-  overflow: hidden;
+  margin-left: 10px;
   white-space: nowrap;
-  text-overflow: ellipsis;
-  flex-grow: 1;
-  width: 200%;
-}
-.item-txt:hover {
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
-
-.item-name {
+.item-txt p {
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.item-txt .item-title {
   font-size: 1.1rem;
-  font-weight: bold;
   line-height: 1.5;
-}
-.item-name:hover {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.item-desc {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.item-desc:hover {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-weight: bold;
 }
 
 .item-price {
+  padding: 1.5rem 0.8rem 0 0.5rem;
   font-weight: bold;
+  transition: 0.5s ease;
+}
+
+.item-select {
+  position: absolute;
+  background: #99E2D0;
+  right: 0px;
+  width: 4rem;
+  height: 5rem;
+  color: #fff;
   display: flex;
-  align-items: flex-end;
-  margin-right: 0.5rem;
-  transform: translateX(80%);
-  transition: 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: 0.5s ease;
 }
 
 .card1 {
@@ -631,72 +653,6 @@ restaurants, le bg est plutôt gris*/
   animation-delay: 0.8s;
 }
 
-.item-appear {
-  -webkit-animation: fadein-left 0.5s linear both;
-  animation: fadein-left 0.5s linear both;
-  overflow: hidden;
-}
-
-@-webkit-keyframes fadein-left {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadein-left {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes translate-in {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-@keyframes translate-in {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-.item-select {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #99E2D0;
-  width: 8rem;
-  margin: -1rem -1.1rem -1rem -1rem;
-  color: #fff;
-  transform: translateX(100%);
-  transition: all 0.5s ease-in-out;
-}
-
-@-webkit-keyframes check {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(0%);
-  }
-}
-@keyframes check {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(0%);
-  }
-}
 .loader {
   display: flex;
   justify-content: center;

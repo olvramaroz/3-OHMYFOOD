@@ -4,16 +4,26 @@
 @import "../utils/mixins";
 @import "../utils/variables";
 
+// TABLETTE ET PC - FOOTER IDENTITQUE
+@media all and (min-width: 768px){
+    footer{
+        flex-direction: row!important;
+        justify-content: space-around!important;
+        height: 16vh;
+        .logo{
+            padding-bottom: 0!important;
+        }
+        .iconFootContainer{
+            display: block!important;
+        }
+    }
+} // fermeture paramètres Tablette PC
+
 //  TABLETTE 
 @media all and (min-width: 768px) and (max-width: 1023px){
-.item-txt{
-    width: 88%!important;
+.fonction-list{
+    display: flex;
 }
-
-footer{
-    align-items: center;
-}
-
 } // fermeture paramètres Tablette
 
 // PC 
@@ -58,18 +68,6 @@ footer{
     width: 24%;
 }
 
-footer{
-    flex-direction: row!important;
-    justify-content: space-around!important;
-    height: 16vh;
-    .logo{
-        padding-bottom: 0!important;
-    }
-    .iconFootContainer{
-        display: block!important;
-    }
-}
-
 //*page restaurant
 .restauHeader{
     i::before{
@@ -86,15 +84,15 @@ footer{
             font-size: 2rem;
         }
     }
-    .menus{
-        display: flex;
-        .menu{
-            flex-grow: 1;
-        }
-    }
 }
 .cta{
 	margin-top: 2.5rem;
 }
 
-} // fermeture paramètres PC 
+.menus{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+} // fermeture paramètres PC

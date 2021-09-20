@@ -225,7 +225,9 @@ object {
 }
 .fonction-item:hover {
   background-color: #f2eafb;
-  cursor: pointer;
+}
+.fonction-item:hover .icon-fonction {
+  color: #9356DC;
 }
 
 .icon-fonction {
@@ -235,10 +237,6 @@ object {
 .fonction-txt {
   font-weight: bold;
   padding-left: 2rem;
-}
-
-.icon-fonction:hover {
-  color: #9356DC;
 }
 
 .new {

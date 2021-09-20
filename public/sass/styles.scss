@@ -118,19 +118,19 @@ object{
             }
             &:hover{
                 background-color: lighten($color-primary, 35%);
-                cursor: pointer;
+                .icon-fonction{
+                    color: $color-primary;
+                }
             }
 }
 
 .icon-fonction{
     padding-left: .5rem;
 }
+
 .fonction-txt{
     font-weight: bold;
     padding-left: nth($padding, 3);
-    }
-.icon-fonction:hover{
-    color: $color-primary;
 }
 
 .new{

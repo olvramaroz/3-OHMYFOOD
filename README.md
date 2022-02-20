@@ -1,5 +1,5 @@
-# OnyLalainaValerieRamarozatovo_P3_06072021
-page : https://olvramaroz.github.io/OnyLalainaValerieRamarozatovo_P3_06072021/
+# Responsive frontend with advanced CSS animation
+# HTML, CSS
 
 <h2> Ohmyfood CSS animation project </h2>
 This project is about web design implementation, with only HTML and advanced CSS.

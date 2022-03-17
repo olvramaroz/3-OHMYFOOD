@@ -1,4 +1,4 @@
-# Responsive frontend with advanced CSS animation
+# Responsive frontend static integration with CSS animation
 # HTML, CSS
 
 <h2> Ohmyfood CSS animation project </h2>
